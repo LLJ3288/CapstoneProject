@@ -1,5 +1,6 @@
 package com.tts.Takemefishingapp.controller;
 
+import com.tts.Takemefishingapp.model.Tweet;
 import com.tts.Takemefishingapp.model.TweetDisplay;
 import com.tts.Takemefishingapp.model.User;
 import com.tts.Takemefishingapp.service.TweetService;
@@ -26,31 +27,52 @@ public class UserController {
 
 
     @GetMapping( value = "/users/{username}")
-    public String getUser(@PathVariable String username, Model model) {
+    public String getUser(@PathVariable(value = "username") String username, Model model) {
 
         User loggedInUSer = userService.getLoggedInUser();
         User user = userService.findByUsername(username);
-        List<TweetDisplay> tweets = tweetService.findAllByUser(user);
+        List<TweetDisplay> tweets = tweetService.findAllByUser(user);      // Slides say Tweet 38...2
         List<User> following = loggedInUSer.getFollowing();
-
-
-
         boolean isFollowing = false;
-
         for (User followedUser : following) {
             if (followedUser.getUsername().equals(username)) {
                 isFollowing = true;
             }
         }
-
-        boolean isSelfPage = loggedInUSer.getUsername().equals(username);
-
-        model.addAttribute("isSelfPage", isSelfPage);
         model.addAttribute("following", isFollowing);
         model.addAttribute("user", user);
         model.addAttribute("tweetList", tweets);
         return "user";
     }
+
+
+
+//        User user = userService.findByUsername(username);
+//        List<TweetDisplay> tweets = tweetService.findAllByUser(user);
+//        List<User> following = loggedInUSer.getFollowing();
+
+
+
+//        boolean isFollowing = false;
+
+//        for (User followedUser : following) {
+//            if (followedUser.getUsername().equals(username)) {
+//                isFollowing = true;
+//            }
+//        }
+//
+//        boolean isSelfPage = loggedInUSer.getUsername().equals(username);
+//
+//        model.addAttribute("isSelfPage", isSelfPage);
+//
+
+
+
+//        model.addAttribute("following", isFollowing);
+//        model.addAttribute("user", user);
+//        model.addAttribute("tweetList", tweets);
+//        return "user";
+//    }
 
     @GetMapping(value = "/users")
     public String getUsers(@RequestParam(value = "filter", required = false) String filter, Model model) {

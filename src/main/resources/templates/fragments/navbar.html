@@ -12,23 +12,35 @@
             <a class="navbar-brand" href="#" style="color: #cc8820">
                 <i class="fab fa-twitter"></i> Fish-Talk Conversations</a>
         </div>
-
-
-
-
         <div id="navbar">
             <ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
                 <li><a href="/tweets">Home</a></li>
                 <li><a href="/tweets/new">New Tweet</a></li>
             </ul>
-
-
             <ul class="nav navbar-nav navbar-right">
                 <li sec:authorize="isAuthenticated()"><a style="pointer-events: none;color: #00aced">
                     @<span sec:authentication="name"></span></a>
                 <li sec:authorize="isAuthenticated()"><a href="../logout">Logout</a></li>
                 <li sec:authorize="!isAuthenticated()"><a href="../login">Login</a></li>
             </ul>
+
+
+            <ul class="nav nav-tabs">
+                <li role="presentation" th:classappend="${filter == 'all' ? 'active' : '' }">
+                    <a href="/tweets">All</a></li>
+                <li role="presentation" th:classappend="${filter == 'following' ? 'active' : '' }">
+                    <a href="/tweets?filter=following">Following</a></li>
+            </ul><br/>
+
+
+            <div th:if="${#lists.isEmpty(tweetList) and filter == 'all'}">
+                <h3>No tweets have been created yet</h3>
+            </div>
+            <div th:if="${#lists.isEmpty(tweetList) and filter == 'following'}">
+                <h3>No tweets have been created by your followers</h3>
+            </div>
+
+
         </div>
     </div>
 </nav>

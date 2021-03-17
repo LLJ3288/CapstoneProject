@@ -17,7 +17,7 @@ public class FollowController {
     private UserService userService;
 
     @PostMapping(value = "/follow/{username}")
-    public String follow(@PathVariable String username, HttpServletRequest request) {
+    public String follow(@PathVariable(value = "username") String username, HttpServletRequest request) {
         User loggedInUser = userService.getLoggedInUser();
         User userToFollow = userService.findByUsername(username);
 
@@ -29,7 +29,8 @@ public class FollowController {
     }
 
     @PostMapping(value = "/unfollow/{username}")
-    public String unfollow(@PathVariable String username, HttpServletRequest request) {
+//    public String unfollow(@PathVariable String username, HttpServletRequest request) {
+      public String unfollow(@PathVariable(value = "username") String username, HttpServletRequest request) {
         User loggedInUser = userService.getLoggedInUser();
         User userToUnfollow = userService.findByUsername(username);
         List<User> followers = userToUnfollow.getFollowers();

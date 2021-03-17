@@ -21,3 +21,13 @@ body{
 	padding-bottom: 10px;
 	border-radius: 5px;
 }
+
+
+
+a.username {
+    color: #00aced
+}
+
+a.tag {
+    color: #0084b4
+}
