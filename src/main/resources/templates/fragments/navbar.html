@@ -9,13 +9,21 @@
 <nav class="row navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="color: #cc8820">
+            <a class="navbar-brand" href="#" style="color:#c63254">
                 <i class="fab fa-twitter"></i> Fish-Talk Conversations</a>
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
                 <li><a href="/tweets">Home</a></li>
+
                 <li><a href="/tweets/new">New Tweet</a></li>
+
+<!--                <li><a href="/tweets">Editors Page </a> </li>-->
+
+                <li><a href="https://www.google.com/">Google Search</a></li>
+
+                <li><a href="https://www.basspro.com/shop/en?ds_e=MICROSOFT&ds_c=&gclid=78c2a19af37811a8fab8c1c99a9c3a68&gclsrc=3p.ds&msclkid=78c2a19af37811a8fab8c1c99a9c3a68#">Sponsor Link</a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li sec:authorize="isAuthenticated()"><a style="pointer-events: none;color: #00aced">
@@ -25,20 +33,22 @@
             </ul>
 
 
-            <ul class="nav nav-tabs">
-                <li role="presentation" th:classappend="${filter == 'all' ? 'active' : '' }">
-                    <a href="/tweets">All</a></li>
-                <li role="presentation" th:classappend="${filter == 'following' ? 'active' : '' }">
-                    <a href="/tweets?filter=following">Following</a></li>
-            </ul><br/>
+<!--            <ul class="nav nav-tabs">-->
+<!--                <li role="presentation" th:classappend="${filter == 'all' ? 'active' : '' }">-->
+<!--                    <a href="/tweets">All</a></li>-->
+<!--                <li role="presentation" th:classappend="${filter == 'following' ? 'active' : '' }">-->
+<!--                    <a href="/tweets?filter=following">Following</a></li>-->
+<!--            </ul><br/>-->
 
 
-            <div th:if="${#lists.isEmpty(tweetList) and filter == 'all'}">
-                <h3>No tweets have been created yet</h3>
-            </div>
-            <div th:if="${#lists.isEmpty(tweetList) and filter == 'following'}">
-                <h3>No tweets have been created by your followers</h3>
-            </div>
+
+
+<!--            <div th:if="${#lists.isEmpty(tweetList) and filter == 'all'}">-->
+<!--                <h3>No tweets have been created yet</h3>-->
+<!--            </div>-->
+<!--            <div th:if="${#lists.isEmpty(tweetList) and filter == 'following'}">-->
+<!--                <h3>No tweets have been created by your followers</h3>-->
+<!--            </div>-->
 
 
         </div>
