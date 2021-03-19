@@ -31,3 +31,14 @@ a.username {
 a.tag {
     color: #0084b4
 }
+
+
+
+#map {
+    height: 75%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
