@@ -67,9 +67,41 @@
 <script th:inline="javascript">
     /*<![CDATA[*/
 
+        let coords3 = {
+        lat: parseFloat(/*[[${location.lat}]]*/) || 32.740676,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -94.030487
+            };
+
+        let coords4 = {
+        lat: parseFloat(/*[[${location.lat}]]*/) || 32.516903,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -93.586209
+            };
+
+        let coords5 = {
+        lat: parseFloat(/*[[${location.lat}]]*/) || 32.655422,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -93.701735
+            };
+
+        let coords6 = {
+        lat: parseFloat(/*[[${location.lat}]]*/) || 32.690697,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -93.662505
+            };
+
+        let coords7 = {
+        lat: parseFloat(/*[[${location.lat}]]*/) ||  32.820786,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -94.662503
+            };
+
+        let coords8 = {
+        lat: parseFloat(/*[[${location.lat}]]*/) ||  32.431687,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -93.365769
+            };
+
+
+
     let coords = {
-        lat: parseFloat(/*[[${location.lat}]]*/) || 32.5252,
-        lng: parseFloat(/*[[${location.lng}]]*/) || -93.7502
+        lat: parseFloat(/*[[${location.lat}]]*/) || 32.513107,
+        lng: parseFloat(/*[[${location.lng}]]*/) || -93.870638
             };
     let city = /*[[${location.city}]]*/;
     let state = /*[[${location.state}]]*/;
