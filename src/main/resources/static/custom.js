@@ -157,6 +157,12 @@ $(document).ready(function() {
                                                       animation: google.maps.Animation.BOUNCE
                                                     });
 
+                        let marker8 = new google.maps.Marker({
+                                                                              position: coords9,
+                                                                              map: map,
+                                                                              icon: image,
+                                                                              animation: google.maps.Animation.BOUNCE
+                                                                            });
 
 
                        let marker4 = new google.maps.Marker({
