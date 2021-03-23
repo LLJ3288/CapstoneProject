@@ -36,7 +36,7 @@ dependencies {
 	implementation group: 'org.ocpsoft.prettytime', name: 'prettytime', version: '5.0.0.Final'
 
 
-//	compile 'org.postgresql:postgresql:42.2.15.jre7'
+	compile 'org.postgresql:postgresql:42.2.15.jre7'
 }
 
 test {
